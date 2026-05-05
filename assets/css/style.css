@@ -355,7 +355,8 @@ textarea { resize: vertical; min-height: 100px; }
 .login-page {
   min-height: 100vh;
   display: flex;
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 60%, #2a4a7f 100%);
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 60%, #2a4a7f 100%),
+              url('../images/login-bg.jpg') no-repeat center/cover ;
 }
 
 .login-left {
@@ -366,6 +367,10 @@ textarea { resize: vertical; min-height: 100px; }
   padding: 60px;
   position: relative;
   overflow: hidden;
+  background: 
+    linear-gradient(rgba(15,45,82,0.7), rgba(15,45,82,0.7)),
+    url("../images/malatecmw.png") no-repeat center;
+  background-size: cover;
 }
 
 .login-left::before {
@@ -373,7 +378,6 @@ textarea { resize: vertical; min-height: 100px; }
   position: absolute;
   top: -100px; right: -100px;
   width: 400px; height: 400px;
-  background: rgba(201,164,60,0.08);
   border-radius: 50%;
 }
 
@@ -388,7 +392,22 @@ textarea { resize: vertical; min-height: 100px; }
 
 .login-hero { max-width: 440px; color: var(--white); position: relative; z-index: 1; }
 .login-hero .school-badge { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
-.login-hero .badge-icon { width: 56px; height: 56px; background: var(--gold); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; color: var(--navy-dark); }
+.login-hero .badge-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* important */
+}
+
+.login-hero .badge-icon img {
+  width: 100%;  /* adjust as needed */
+  height: 100%;
+  object-fit: contain;
+}
 .login-hero .school-name { font-size: 13px; opacity: 0.8; line-height: 1.4; }
 .login-hero .school-name strong { display: block; font-size: 15px; opacity: 1; }
 .login-hero h1 { font-size: 42px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
