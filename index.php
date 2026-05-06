@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - MUST Hostel Booking System</title>
+<title>Login - MUST Hostel Allocation System</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
 .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; color: #aaa; font-size: 12px; }
