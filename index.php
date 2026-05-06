@@ -10,7 +10,6 @@ if (isLoggedIn()) {
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $loginAs = clean($_POST['login_as'] ?? 'student');
     $identifier = clean($_POST['identifier'] ?? '');
     $password = $_POST['password'] ?? '';
 
@@ -18,12 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Please enter your credentials.';
     } else {
         $db = getDB();
-        
-        // Find user by reg_number or email, filtered by role
+
         $stmt = $db->prepare(
-            "SELECT * FROM users WHERE (reg_number = ? OR email = ?) AND role = ? LIMIT 1"
+            "SELECT * FROM users WHERE reg_number = ? OR email = ? LIMIT 1"
         );
-        $stmt->execute([$identifier, $identifier, $loginAs]);
+        $stmt->execute([$identifier, $identifier]);
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password'])) {
@@ -37,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: " . SITE_URL . "/{$user['role']}/dashboard.php");
             exit;
         } else {
-            $error = 'Invalid credentials. Please check your ' . ($loginAs === 'student' ? 'registration number' : 'username') . ' and password.';
+            $error = 'Invalid credentials. Please check your registration number, username or email and password.';
         }
     }
 }
@@ -95,25 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <form method="POST" id="loginForm">
         <div class="form-group">
-          <label>I am a:</label>
-          <div class="role-selector">
-            <div class="role-btn active" data-role="student" onclick="selectRole('student', this)">
-              <span class="role-icon">🎓</span>Student
-            </div>
-            <div class="role-btn" data-role="operator" onclick="selectRole('operator', this)">
-              <span class="role-icon">👨‍💼</span>Operator
-            </div>
-            <div class="role-btn" data-role="admin" onclick="selectRole('admin', this)">
-              <span class="role-icon">🔑</span>Admin
-            </div>
-          </div>
-          <input type="hidden" name="login_as" id="login_as" value="student">
-        </div>
-
-        <div class="form-group">
-          <label id="identifierLabel">Registration Number</label>
+          <label for="identifier">Registration Number, Username or Email</label>
           <input type="text" name="identifier" id="identifier"
-                 placeholder="e.g. MU/STU/2024/001" required
+                 placeholder="Enter your registration number, username or email" required
                  value="<?= htmlspecialchars($_POST['identifier'] ?? '') ?>">
         </div>
 
@@ -126,6 +108,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           Sign In →
         </button>
       </form>
+
+      <div style="margin-top:10px;text-align:right;">
+        <a href="forgot_password.php" class="text-link">Forgot password?</a>
+      </div>
 
       <div class="divider">or</div>
 
@@ -142,20 +128,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </div>
 
-<script>
-function selectRole(role, el) {
-    document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('login_as').value = role;
-    document.getElementById('identifierLabel').textContent = 
-        role === 'student' ? 'Registration Number' : 'Username / Email';
-    document.getElementById('identifier').placeholder = 
-        role === 'student' ? 'e.g. MU/STU/2024/001' : 'Enter your username';
-}
-
-// Pre-select role if form was submitted
-const preRole = "<?= htmlspecialchars($_POST['login_as'] ?? 'student') ?>";
-document.querySelector('[data-role="' + preRole + '"]')?.click();
-</script>
 </body>
 </html>
