@@ -15,7 +15,7 @@ define('MAX_CAPACITY', 500);
 // Email settings (use PHPMailer or built-in mail())
 define('MAIL_FROM', 'noreply@must.ac.mw');
 define('MAIL_FROM_NAME', 'MUST Hostel Office');
-define('ACCOMMODATION_FEE', 180000); // MWK
+define('ACCOMMODATION_FEE', 80000); // MWK
 
 // mysqli Connection wrapper
 class SimpleDB {
