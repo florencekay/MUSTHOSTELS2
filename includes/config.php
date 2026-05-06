@@ -1,7 +1,5 @@
 <?php
-// ==============================================
-// MUST Hostel Booking System - Configuration
-// ==============================================
+
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
