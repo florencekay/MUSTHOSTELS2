@@ -10,6 +10,11 @@ $openInquiries = $db->query("SELECT COUNT(*) FROM inquiries WHERE status='open'"
 $totalInvoices = $db->query("SELECT COUNT(*) FROM invoices")->fetchColumn();
 $verifiedPayments = $db->query("SELECT COUNT(*) FROM payments WHERE status='verified'")->fetchColumn();
 
+// Allocation stats
+$allocated = $db->query("SELECT COUNT(*) FROM applications WHERE status='allocated'")->fetchColumn();
+$notAllocated = $db->query("SELECT COUNT(*) FROM applications WHERE status='not_allocated'")->fetchColumn();
+$pending = $db->query("SELECT COUNT(*) FROM applications WHERE status='pending'")->fetchColumn();
+
 $recentPayments = $db->query(
     "SELECT p.*, u.full_name, u.reg_number FROM payments p
      JOIN users u ON p.student_id=u.id
@@ -35,6 +40,18 @@ require_once '../includes/header.php';
   <div class="stat-card">
     <div class="stat-icon" style="background:#d1fae5">✅</div>
     <div class="stat-info"><div class="value"><?= $verifiedPayments ?></div><div class="label">Verified Payments</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#dbeafe">🏠</div>
+    <div class="stat-info"><div class="value"><?= $allocated ?></div><div class="label">Allocated</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#fef3c7">⏳</div>
+    <div class="stat-info"><div class="value"><?= $pending ?></div><div class="label">Pending Allocation</div></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:#fee2e2">❌</div>
+    <div class="stat-info"><div class="value"><?= $notAllocated ?></div><div class="label">Rejected</div></div>
   </div>
 </div>
 
@@ -67,6 +84,15 @@ require_once '../includes/header.php';
   <div class="card">
     <div class="card-header"><h3>⚡ Quick Actions</h3></div>
     <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+      <?php if ($pending > 0): ?>
+      <form method="POST" action="run_allocation.php" onsubmit="return confirm('Run batch allocation for <?= $pending ?> pending applications?')">
+        <button type="submit" class="btn btn-gold" style="width:100%">
+          🎲 Run Batch Allocation (<?= $pending ?> pending)
+        </button>
+      </form>
+      <?php else: ?>
+      <div class="alert alert-info" style="margin:0">✅ No pending applications to allocate.</div>
+      <?php endif; ?>
       <a href="payments.php" class="btn btn-primary">💰 Review Payments</a>
       <a href="inquiries.php" class="btn btn-outline">📬 Handle Inquiries (<?= $openInquiries ?> open)</a>
       <a href="invoices.php" class="btn btn-outline">🧾 Manage Invoices</a>
