@@ -61,13 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="login-left">
     <div class="login-hero">
       <div class="school-badge">
-        <div class="badge-icon">M</div>
+        <div class="badge-icon"><img src="assets/images/must.logo.png" alt="must.logo"></div>
         <div class="school-name">
           <strong>MUST</strong>
           Malawi University of Science<br>and Technology
         </div>
       </div>
-      <h1>Hostel Room <span>Booking</span> System</h1>
+      <h1>Hostel Room <span> Allocation </span> System</h1>
       <p>Seamlessly manage hostel accommodation for students. Apply, track, pay and get allocated — all in one place.</p>
       <div class="login-features">
         <div class="feature-item"><div class="fi">🏠</div> Random & Manual Room Allocation</div>

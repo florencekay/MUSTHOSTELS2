@@ -403,7 +403,7 @@ textarea { resize: vertical; min-height: 100px; }
   overflow: hidden; /* important */
 }
 
-.login-hero .badge-icon img {
+.badge-icon img {
   width: 100%;  /* adjust as needed */
   height: 100%;
   object-fit: contain;
