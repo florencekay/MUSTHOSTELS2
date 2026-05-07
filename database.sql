@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS invoices (
     application_id INT NOT NULL,
     student_id INT NOT NULL,
     invoice_number VARCHAR(30) UNIQUE NOT NULL,
-    amount DECIMAL(10,2) DEFAULT 180000.00,
+    amount DECIMAL(10,2) DEFAULT 80000.00,
     currency VARCHAR(10) DEFAULT 'MWK',
     status ENUM('unpaid','paid','partial') DEFAULT 'unpaid',
     issued_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

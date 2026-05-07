@@ -7,7 +7,7 @@ define('DB_PASS', '');
 define('DB_NAME', 'must_hostel');
 
 define('SITE_NAME', 'MUST Hostel Booking System');
-define('SITE_URL', 'http://localhost/must_hostel');
+define('SITE_URL', 'http://localhost/MUSTHOSTELS2');
 define('MAX_CAPACITY', 500);
 
 // Email settings (use PHPMailer or built-in mail())
@@ -47,6 +47,10 @@ class SimpleDB {
 
     public function error() {
         return $this->mysqli->error;
+    }
+
+    public function lastInsertId() {
+        return $this->mysqli->insert_id;
     }
 }
 
