@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch();
 
         if ($user) {
-            $message = 'If the account exists, password reset instructions have been sent to the registered email address. Please check your inbox.';
+            $message = 'a code has been sent to the registered email address. Please check your inbox and verify.';
             // Optionally, send a notification or ask the user to contact the hostel office.
             // sendEmail($user['email'], 'Password Reset Instructions', ..., 'general');
         } else {
