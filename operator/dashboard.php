@@ -2,6 +2,7 @@
 require_once '../includes/config.php';
 requireLogin('operator');
 $db = getDB();
+$bodyClass = 'dashboard-bg';
 $pageTitle = 'Operator Dashboard';
 $pageSubtitle = 'Manage invoices, payments, receipts and inquiries';
 

@@ -68,7 +68,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' - ' : '' ?><?= SITE_NAME ?></title>
 <link rel="stylesheet" href="<?= SITE_URL ?>/assets/css/style.css">
 </head>
-<body class="<?= $currentPage === 'dashboard.php' ? 'dashboard-bg' : '' ?>">
+<body<?php if (!empty($bodyClass)): ?> class="<?= htmlspecialchars($bodyClass) ?>"<?php endif; ?> >
 <div class="layout">
 
 <!-- SIDEBAR -->

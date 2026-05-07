@@ -2,6 +2,7 @@
 require_once '../includes/config.php';
 requireLogin('admin');
 $db = getDB();
+$bodyClass = 'dashboard-bg';
 
 $pageTitle = 'Admin Dashboard';
 $pageSubtitle = 'Overview of the hostel booking system';

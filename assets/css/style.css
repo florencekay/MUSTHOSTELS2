@@ -43,16 +43,26 @@ body {
 }
 
 body.dashboard-bg {
-  background: linear-gradient(rgba(6, 12, 28, 0.70), rgba(6, 12, 28, 0.70)), url('../images/malatecmw.png') no-repeat center center/cover;
+  background-image: linear-gradient(rgba(6, 12, 28, 0.80), rgba(6, 12, 28, 0.80)), url('../images/malatecmw.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #f4f7fb;
+  min-height: 100vh;
+}
+
+body.dashboard-bg .layout {
+  background: transparent;
 }
 
 body.dashboard-bg .topbar,
 body.dashboard-bg .card,
 body.dashboard-bg .stat-card,
 body.dashboard-bg .table-wrap table,
-body.dashboard-bg .alert {
-  background: rgba(255,255,255,0.92);
+body.dashboard-bg .alert,
+body.dashboard-bg .page-content {
+  background: rgba(255,255,255,0.94);
 }
 
 /* ========= LAYOUT ========= */

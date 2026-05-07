@@ -2,6 +2,7 @@
 require_once '../includes/config.php';
 requireLogin('student');
 $db = getDB();
+$bodyClass = 'dashboard-bg';
 
 $pageTitle = 'My Dashboard';
 $pageSubtitle = 'Welcome to MUST Hostel Allocation System';
