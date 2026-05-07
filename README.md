@@ -17,8 +17,8 @@ A web-based hostel room allocation and booking system for MUST students, built w
 
 ## 📊 Capacity & Fees
 
-- **Total Student Applications:** 100
-- **Available Hostel Spaces:** 90
+- **Total Student Applications:** atleast 100
+- **Available Hostel Spaces:** atleast 90 but less that number of student applications 
 - **Accommodation Fee:** MWK 80,000 per student
 
 ---
