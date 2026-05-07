@@ -42,6 +42,19 @@ body {
   line-height: 1.6;
 }
 
+body.dashboard-bg {
+  background: linear-gradient(rgba(6, 12, 28, 0.70), rgba(6, 12, 28, 0.70)), url('../images/malatecmw.png') no-repeat center center/cover;
+  color: #f4f7fb;
+}
+
+body.dashboard-bg .topbar,
+body.dashboard-bg .card,
+body.dashboard-bg .stat-card,
+body.dashboard-bg .table-wrap table,
+body.dashboard-bg .alert {
+  background: rgba(255,255,255,0.92);
+}
+
 /* ========= LAYOUT ========= */
 .layout { display: flex; min-height: 100vh; }
 
