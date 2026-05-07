@@ -120,9 +120,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
     <!--  <div style="margin-top:24px;padding:14px;background:#f8fafc;border-radius:8px;font-size:12px;color:#64748b">
-        <strong>Demo Credentials:</strong><br>
+             <strong>Demo Credentials:</strong><br>
         Admin: <code>ADMIN001</code> / <code>password</code><br>
         Operator: <code>OPR001</code> / <code>password</code> -->
+    
       </div>
     </div>
   </div>
