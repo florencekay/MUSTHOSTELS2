@@ -63,7 +63,7 @@ body.dashboard-bg .stat-card,
 body.dashboard-bg .table-wrap table,
 body.dashboard-bg .alert,
 body.dashboard-bg .page-content {
-  background: rgba(188, 206, 254, 0.94);
+  background: rgba(213, 224, 255, 0.94);
 }
 
 /* ========= LAYOUT ========= */
@@ -207,7 +207,7 @@ body.dashboard-bg .page-content {
 }
 
 .card-header h3 { font-size: 15px; font-weight: 700; color: var(--navy); }
-.card-body { padding: 22px; }
+.card-body { padding: 22px; color:#070c58;}
 
 /* ========= STAT CARDS ========= */
 .stats-grid {
@@ -256,7 +256,7 @@ thead th {
   border-bottom: 1px solid var(--gray-200);
 }
 
-tbody td { padding: 13px 16px; border-bottom: 1px solid var(--gray-100); font-size: 13.5px; }
+tbody td { padding: 13px 16px; border-bottom: 1px solid var(--gray-600); font-size: 13.5px; }
 tbody tr:hover td { background: var(--gray-50); }
 tbody tr:last-child td { border-bottom: none; }
 
