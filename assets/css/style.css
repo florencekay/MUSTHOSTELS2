@@ -1,10 +1,10 @@
-/* MUST Hostel Booking System - Main Stylesheet */
+/* MUST Hostel Allocation System - Main Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   --navy: #0b3d66;
   --navy-light: #1f5a8d;
-  --navy-dark: #072842;
+  --navy-dark: #070c58;
   --gold: #1f8b59;
   --gold-light: #5fbf95;
   --green: #2f8f5d;
@@ -63,7 +63,7 @@ body.dashboard-bg .stat-card,
 body.dashboard-bg .table-wrap table,
 body.dashboard-bg .alert,
 body.dashboard-bg .page-content {
-  background: rgba(255,255,255,0.94);
+  background: rgba(188, 206, 254, 0.94);
 }
 
 /* ========= LAYOUT ========= */
