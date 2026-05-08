@@ -410,7 +410,7 @@ textarea { resize: vertical; min-height: 100px; }
   position: absolute;
   bottom: -80px; left: -80px;
   width: 300px; height: 300px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(30, 21, 203, 0.04);
   border-radius: 50%;
 }
 
