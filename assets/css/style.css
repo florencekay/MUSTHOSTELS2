@@ -274,13 +274,13 @@ tbody tr:last-child td { border-bottom: none; }
   letter-spacing: 0.5px;
 }
 
-.badge-success { background: var(--green-light); color: var(--green-dark); }
-.badge-danger { background: var(--red-light); color: var(--red); }
-.badge-warning { background: var(--orange-light); color: var(--orange); }
-.badge-info { background: var(--blue-light); color: var(--blue); }
-.badge-purple { background: var(--purple-light); color: var(--purple); }
-.badge-gray { background: var(--gray-200); color: var(--gray-700); }
-.badge-navy { background: rgba(11,61,102,0.1); color: var(--navy); }
+.badge-success { background: var(--green-light); color: #000; }
+.badge-danger { background: var(--red-light); color: #000; }
+.badge-warning { background: var(--orange-light); color: #000; }
+.badge-info { background: var(--blue-light); color: #000; }
+.badge-purple { background: var(--purple-light); color: #000; }
+.badge-gray { background: var(--gray-200); color: #000; }
+.badge-navy { background: rgba(11,61,102,0.1); color: #000; }
 
 /* ========= BUTTONS ========= */
 .btn {
