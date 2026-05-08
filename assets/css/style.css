@@ -7,7 +7,7 @@
   --navy-dark: #070c58;
   --gold: #1f8b59;
   --gold-light: #5fbf95;
-  --green: #2f8f5d;
+  --green: #19613c;
   --green-dark: #0d5f3c;
   --green-light: #d8f2e5;
   --red: #b91c1c;
@@ -150,7 +150,8 @@ body.dashboard-bg .page-content {
 }
 
 .nav-item:hover { background: rgba(255,255,255,0.06); color: var(--white); }
-.nav-item.active { background: rgba(201,164,60,0.12); color: var(--gold); border-left-color: var(--gold); }
+.nav-item.active { background: rgba(201,164,60,0.12); color: var(--gray-700); border-left-color: var(--gold); }
+.nav-item.active .icon { color: var(--gray-700); }
 .nav-item .icon { font-size: 16px; width: 20px; text-align: center; }
 
 .sidebar-footer {
@@ -250,7 +251,7 @@ thead th {
   text-align: left;
   font-size: 11px;
   font-weight: 700;
-  color: var(--gray-500);
+  color: var(--gray-600);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   border-bottom: 1px solid var(--gray-200);
