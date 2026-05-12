@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS email_logs (
 -- ========================
 
 -- Default Admin
-INSERT INTO users (reg_number, full_name, email, password, role) VALUES
+INSERT IGNORE INTO users (reg_number, full_name, email, password, role) VALUES
 ('ADMIN001', 'System Administrator', 'admin@must.ac.mw', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
 ('OPR001', 'Hostel Operator', 'operator@must.ac.mw', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'operator');
 -- Default password: password
